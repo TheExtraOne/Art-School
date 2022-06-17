@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>News.</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<meta name="HandheldFriendly" content="True"/> <!--В некоторых случаях смартфоны автоматически изменяют масштаб страницы, лучше эту возможность отключать-->
+		<!-- saved from url=(0014)about:internet -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> <!--Для включения сглаживания шрифтов -->
+		<meta http-equiv="cleartype" content="on"/> <!--Чтобы переключить Internet Explorer в режим последней версии -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css"> <!--для иконок-->
+		<link rel="stylesheet" type="text/css" href="../css/styles_general.css"> <!--CSS общие для всех документов-->
+		<link rel="stylesheet" type="text/css" href="../css/styles_header_footer.css"> <!--CSS для хэдера-->
+		<link rel="stylesheet" type="text/css" href="../css/NewsStyle.css"> <!--CSS для данной страницы-->
+		<link rel="icon" href="../logo32.ico"> <!-- 32×32 лучше, чем 16-->
+		<link rel="icon" href="../img/icon/logoWebP.webp" type="image/webp">
+		<link rel="icon" href="../img/icon/logoSvg.svg" type="image/svg+xml"> <!--Не все поддерживают WebP-->
+		<link rel="apple-touch-icon" href="../img/icon/logoPg180.png">  <!-- Для apple 180×180 -->
+		<!--<link rel="manifest" href="manifest.webmanifest">-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav class="wrapperNav">
+					<div class="headerBody">
+						<div class="leftNav">
+							<a href="MainPage.html" class="logo">
+								<picture>
+									<source srcset="../img/logo/logo.webp" type="image/webp">
+									<img src="../img/logo/logoPNG.png" alt="Logo">
+								</picture>
+								art school
+							</a>
+						</div>
+						<div class="headerBurger">
+							<span></span>
+						</div>
+						<div class="rightNav">
+							<ul>
+								<li><a href="../MainPage.html">Home</a></li>
+								<li><a href="../AboutPage.html">About</a></li>
+								<li><a href="../CoursesPage.html">Courses</a></li>
+								<li><a href="../FAQPage.html">FAQ</a></li>
+								<li><a href="../NewsPage.html" class="active">News</a></li>
+								<li><a href="../ContactsPage.html">Contact</a></li>
+								<li>
+									<button onclick="surprise('block')" class="logInButton active"><img src="../img/logo/logoOranNoBack.svg"><span>Log in</span></button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<div class="main">
+				<div onclick="surprise('none')" id="gray"></div> <!--Задний прозрачный фон для формы авторизации-->
+				<div class="logTabs" id="window">
+					<img onclick="surprise('none')" src="../img/logo/closeSvg.svg" class="close" alt="close"> <!--Картинка крестика-->
+					<input type="radio" name="log-btn" id="log-btn-1" value="" checked>
+					<label for="log-btn-1">Sign in</label>
+					<input type="radio" name="log-btn" id="log-btn-2" value="">
+					<label for="log-btn-2">Create an account</label>
+					<div id="form-1">
+						<div class="formText">Sign in to your account using email and password provided during registration.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignIn">
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogIn" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogIn" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedIn" class="checkbox" checked>
+						   		Keep me signed in
+						   	</label><br>
+						   	<a href="#" class="formText">Forgot password?</a><br>
+						   	<button type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign in</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					    <div class="formText last">Or sign in with:</div>
+					    <i class="fa fa-google" aria-hidden="true"></i>
+				    	<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				    	<i class="fa fa-twitter" aria-hidden="true"></i>
+				    	<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+				    	<i class="fa fa-telegram" aria-hidden="true"></i>
+				    	<i class="fa fa-instagram" aria-hidden="true"></i>
+					</div>
+					<div id="form-2">
+						<div class="formText">Registration takes less than a minute but gives you full control over your studying.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignUp">
+						   	<label> Name<br>
+						   		<input type='text' name='name' id="name" class="input" placeholder="Max" maxlength="15" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Surname<br>
+						   		<input type='text' name='surname' id="surname" class="input" placeholder="Velichko" maxlength="20" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogUp" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogUp" class="input" placeholder="Use at least 6 letters and numbers" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label> Confirm your password<br>
+						   		<input type='password' name='confpass' id="confPassLogUp" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedUp" class="checkbox" checked>
+						   		Remember me
+						   	</label><br>
+						   	<button  type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign up</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					</div>
+				</div>
+				<div class="wrapperForNews">
+					<div class="containerForNews">
+						<nav class="bread">&#60;&emsp;<a href="../NewsPage.html#news" class="prev">Back to News Page</a></nav>
+						<div class="headerNews">
+							<div class="headerNewsTitle" id="NewsName9">
+								where did the inspiration go?
+							</div>
+							<div class="headerNewsBottom container">
+								<div class="headerNewsBottomLeft">
+									<p>By Vlad Evtuhov | May 07, 2022 | 15 min to read</p>
+								</div>
+								<div class="headerNewsBottomRight">
+									<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+								</div>
+							</div>
+						</div>
+						<div class="containerForContent container">
+							<div class="content">
+								<picture>
+										<source srcset="../img/news/option10web.webp" type="image/webp">
+										<img src="../img/news/option10.jpg" alt="Inspiration" title="Inspiration">
+								</picture>
+								<article>
+									<p class="keywords">Keywords: Experts say, Art</p>
+									<p>From time to time, you may have been inspired &mdash; but have you ever thought about what inspiration is, and the effect it has on you? The term is frequently linked with creativity; for instance, one might &quot;wait for inspiration&quot; before starting a creative project. But until recently, there has been very little research into different aspects of inspiration.<p>
+
+									<p>Psychologists Thrash and Elliot have studied the subject of inspiration in depth, and discovered that it can be both powerful and motivational. They've even created an Inspiration Scale to measure it. Thrash and Elliot describe inspiration as being constructed of three main qualities: evocation, transcendence, and approach motivation. What does that really mean? Inspiration occurs spontaneously, without intention. So it's likely to feel like something that happens to you, rather than something that you choose or plan to experience. Transcendence is the experience of something that is beyond usual, everyday occurrences. When inspired, you may feel in awe and connected to a powerful source of energy. You may have a sense of certainty and clarity about things, and suddenly become aware of new possibilities. Inspiration is likely to cause you to take some purposeful action and motivate you to create or do something new. It can open you up to the possibility of achieving something you had previously thought of as unlikely or impossible, and transform your perception of your own capabilities. There is evidence to show that, in addition to helping us achieve new goals, inspiration is also good for our general well-being. It can increase feelings of gratitude and appreciation, lift our mood, and provide us with a heightened sense of purpose.</p>
+
+									<p>Being inspired can help us extend our self-limitations and provide us with a new reference point of what is possible. For instance, Roger Bannister was the first man to run a mile in under four minutes; he achieved this at a time when it was generally accepted that the human body was incapable of such a feat. He not only inspired other athletes to raise their expectations, but helped people in general realize how our beliefs can hold us back or spur us on to success.</p>
+
+									<p>Whatever goal you have &mdash; whether it's to be an accomplished musician, artist, business executive, motivational speaker, athlete, or parent &mdash; you'll most likely come across people who appear to do this to a standard that you feel you have little hope of achieving. These people often exemplify those who have reached (or are close to reaching) their potential, usually after a period of intense determination and hard work. But rather than feel discouraged or envious of their achievement, you can choose to consider them as your role models. Sure, you may never be invited to speak at a TED Talk or win a Nobel Prize, but you may be able to learn from their experience and advice, and discover ways to advance to a level beyond your current capability.</p>
+
+									<p>In childhood, we learn how to replicate the behaviors of those in authority and in our peer group. Children are more likely to exhibit the behaviors of the things we do rather than the things we say they should do. We can actively choose to be a role model for others, but whether we realize it or not, at any time, our behavior and actions may influence others. No matter if we're acting as a customer, passenger, driver, neighbor, celebrity, family member, or employee, we may be sending a powerful message to others. Whether this becomes a positive influence or not depends upon your conduct at the time, not the values you say you have!</p>
+
+									<p>Providing inspiration isn't always connected with achieving excellence, either. The way you deal with problems and concerns can also act as a positive example for others to follow. If you respond and act in a constructive way, others may implicitly learn how to develop such skills as resilience, hope, optimism, and a growth mindset. Motivation researcher Carol Dweck has found that people with a growth mindset believe they can learn, develop skills, and solve problems through application, dedication, and hard work—while those with a fixed mindset believe their capacity to learn is predetermined and limited.</p>
+
+									<p>Although inspiration is something that occurs spontaneously and therefore cannot be planned, there are ways to make inspiration more likely to occur. For instance, perhaps you've always wanted to write a book, arrange to go to a writers' workshop, attend a reading by a favorite author, or read an autobiography of a prolific writer. Whatever your ambition, try to place yourself in an environment with people who inspire you to learn. Sometimes it helps to remember the reason why we are doing things to feel reinspired. Thinking of the &quot;bigger picture&quot; can help us find a sense of meaning and purpose in tasks that may feel joyless at the time  &mdash; for example, reminding ourselves that we are doing things to support our family, invest in our education, help an organization, or improve our neighborhood. The best part of inspiration is that it has the power to transform your life in an instant. It can move you away from the ordinary and toward the extraordinary, exciting world of possibility.</p> 
+								</article>
+								<div class="more">
+									Read more about:<br>
+									<a href="https://en.wikipedia.org/wiki/Inspiration" title="read more on Wiki" target="_blank">Inspiration</a>
+								</div>
+								<div class="nextNews">
+									<p>Read next news:</p>
+									<div class="continerForNesCards container">
+										<div class="card">
+											<picture>
+												<source srcset="../img/news/option11Web.webp" type="image/webp">
+												<img loading="lazy" src="../img/news/option11.jpg" alt="Michelangelo" title="Michelangelo">
+										</picture>
+											<div class="cardTitle"><a href="news7.html">what was Michelangelo like as a person?</a></div>
+											<div class="auth">Creighton E. Gilbert | May 01, 2022</div>
+											<div class="shortPrev">Many writers have described Michelangelo as the archetype of a brooding and difficult artist.</div>
+											<div class="time">10 min to read</div>
+										</div>
+										<div class="card">
+											<picture>
+												<source srcset="../img/news/option1Web.webp" type="image/webp">
+												<img loading="lazy" src="../img/news/option1.jpg" alt="Expressions of Gender" title="Expressions of Gender">
+											</picture>
+											<div class="cardTitle"><a href="news6.html">excavating Ancient Expressions of Gender</a></div>
+											<div class="auth">Roko Rumora | April 25, 2022</div>
+											<div class="shortPrev">An exhibition of Pompeian frescoes provides a window into how ancient Roman painters understood and represented gender.</div>
+											<div class="time">17 min to read</div>
+										</div>
+										<div class="card">
+											<picture>
+													<source srcset="../img/news/option5Web.webp" type="image/webp">
+													<img loading="lazy" src="../img/news/option5.jpg" alt="A Former Center" title="A Former Center">
+											</picture>
+											<div class="cardTitle"><a href="news5.html">A Former Center</a></div>
+											<div class="auth">Xyo Jaison | April 17, 2022</div>
+											<div class="shortPrev">How a Former KKK Headquarters in Texas Is Being Transformed into a Center for Arts and Healing.</div>
+											<div class="time">15 min to read</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='rightSideBar'>
+								<div class="advertisment">
+									<p>Advertisment</p>
+									<a href="#" target="_blank" title="Read more">
+										<picture>
+											<source srcset="../img/advertisment/adv3Web.webp" type="image/webp">
+											<img src="../img/advertisment/adv3Jp.jpg" alt="Advertisment" title="Read more">
+										</picture>
+									</a>
+								</div>
+								<div class="mostReadStories">
+									<p>Most-Read news:</p>
+									<div class="miniCard container">
+										<picture>
+											<source srcset="../img/news/option16web.webp" type="image/webp">
+											<img src="../img/news/option16.jpg" alt="Swamp mirror" title="Swamp mirror">
+										</picture>
+										<div class="miniCardText"><a href="news9.html">swamp mirror</a></div>
+										<div class="number">1</div>
+									</div>
+									<div class="miniCard container">
+										<picture>
+												<source srcset="../img/news/option7web.webp" type="image/webp">
+												<img src="../img/news/option7.jpg" alt="News about architecture" title="beast, god<br> and line">
+										</picture>
+										<div class="miniCardText"><a href="news10.html">beast, god and line</a></div>
+										<div class="number">2</div>
+									</div>
+									<div class="miniCard container last">
+										<picture>
+												<source srcset="../img/news/option5Web.webp" type="image/webp">
+												<img src="../img/news/option5.jpg" alt="A Former Center" title="A Former Center">
+										</picture>
+										<div class="miniCardText"><a href="news5.html">A Former Center</a></div>
+										<div class="number">3</div>
+									</div>
+								</div>
+								<div class="wrapperForSubscribe container Column">
+									<div class="subTitle">Subscribe to our newsletter!</div>
+									<form method=post action="http://fe.it-academy.by/TestForm.php" name="subscribeNewsletter">
+										<label> Your Name<br>
+											<span><i class="fa fa-user" aria-hidden="true"></i></span>
+									   		<input type='text' name='subscribeName' id="subscribeName" class="subscribeName" placeholder="Max" maxlength="15" required pattern="^[A-Za-z]{2,}">
+									   	</label><br>
+									   	<label> Your Email<br>
+									   		<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+									   		<input type='email' name='subscribeEmail' id="subscribeEmail" class="subscribeEmail" placeholder="Extravaganza07@gmail.com" required>
+									   	</label><br>
+									   	<label>
+									   		<input type='checkbox' name='subscribeLow' id="subscribeLow" class="checkbox" checked>
+									   		I agree to receive communications from Createx Online School
+									   	</label><br>
+									   	<button type="submit" class="waveBtn">
+											<span class="waveBtnText">Subscribe</span>
+											<span class="waveBtnWaves"></span>
+									   	</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="preFooterConteiner">
+				<div class="preFooter">
+					<div class="part Column">
+						<a href="../MainPage.html" class="logo">
+							<picture>
+									<source srcset="../img/logo/logo.webp" type="image/webp">
+									<img src="../img/logo/logoPNG.png" alt="Logo">
+								</picture>
+								art school
+						</a>
+						<div class="notImportantText">
+							Our Art School is a leader in online studying. Founded by artist Noah Yoker, our site has been covering the art scene since 2005. Presenting a lively mix of courses,programs, news, reviews and interviews, Art School employs some of the best art teachers, journalists and critics on contemporary art.
+						</div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">site map</div>
+						<ul>
+							<li><a href="../MainPage.html">Home</a></li>
+							<li><a href="../AboutPage.html">About</a></li>
+							<li><a href="../CoursesPage.html">Courses</a></li>
+							<li><a href="../FAQPage.html">FAQ</a></li>
+							<li><a href="../NewsPage.html">News</a></li>
+							<li><a href="../ContactsPage.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">courses</div>
+						<ul>
+							<li><a href="../courses/FineArtCourse.html">Fine Art</a></li>
+							<li><a href="../courses/GraphCourse.html">Graphic Design</a></li>
+							<li><a href="../courses/GrafCourses.html">Graffiti</a></li>
+							<li><a href="../courses/IllCourse.html">Illustration</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">contact us</div>
+						<div class="phone"><img src="../img/logo/cellphone.svg"><a href="tel:+74055550128">+7 (405) 555-0128</a></div>
+						<div class="mail"><img src="../img/logo/mail.svg"><a href="mailto:hiArtSchool@.com">hiArtSchool@.com</a></div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">privacy policy</div>
+						<div class="notImportantText">
+							This Privacy Policy is meant to help you understand what information we collect and why we collect it. Additional information can be found <a href="../FAQPage.html" title="Go to FAQ">HERE</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="notImportantText">
+					&copy; 2022 by <span>art school</span>. All rights reserved.
+				</div>
+				<div><a href="#NewsName9"><span>back to top</span></a></div>
+			</footer>	
+		<script 
+		src="https://code.jquery.com/jquery-3.6.0.min.js" 
+		type="text/javascript" 
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous">	
+		</script>
+		<script src="../js/scriptHeader.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			//Функция показа окна Log in//
+			function surprise(state){
+				document.getElementById('window').style.display = state;
+				document.getElementById('gray').style.display = state;
+			}
+		</script>
+		<script src="https://yastatic.net/share2/share.js" async></script>
+	</body>
+</html>

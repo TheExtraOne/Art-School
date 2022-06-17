@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>News.</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<meta name="HandheldFriendly" content="True"/> <!--В некоторых случаях смартфоны автоматически изменяют масштаб страницы, лучше эту возможность отключать-->
+		<!-- saved from url=(0014)about:internet -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> <!--Для включения сглаживания шрифтов -->
+		<meta http-equiv="cleartype" content="on"/> <!--Чтобы переключить Internet Explorer в режим последней версии -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css"> <!--для иконок-->
+		<link rel="stylesheet" type="text/css" href="../css/styles_general.css"> <!--CSS общие для всех документов-->
+		<link rel="stylesheet" type="text/css" href="../css/styles_header_footer.css"> <!--CSS для хэдера-->
+		<link rel="stylesheet" type="text/css" href="../css/NewsStyle.css"> <!--CSS для данной страницы-->
+		<link rel="icon" href="../logo32.ico"> <!-- 32×32 лучше, чем 16-->
+		<link rel="icon" href="../img/icon/logoWebP.webp" type="image/webp">
+		<link rel="icon" href="../img/icon/logoSvg.svg" type="image/svg+xml"> <!--Не все поддерживают WebP-->
+		<link rel="apple-touch-icon" href="../img/icon/logoPg180.png">  <!-- Для apple 180×180 -->
+		<!--<link rel="manifest" href="manifest.webmanifest">-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav class="wrapperNav">
+					<div class="headerBody">
+						<div class="leftNav">
+							<a href="MainPage.html" class="logo">
+								<picture>
+									<source srcset="../img/logo/logo.webp" type="image/webp">
+									<img src="../img/logo/logoPNG.png" alt="Logo">
+								</picture>
+								art school
+							</a>
+						</div>
+						<div class="headerBurger">
+							<span></span>
+						</div>
+						<div class="rightNav">
+							<ul>
+								<li><a href="../MainPage.html">Home</a></li>
+								<li><a href="../AboutPage.html">About</a></li>
+								<li><a href="../CoursesPage.html">Courses</a></li>
+								<li><a href="../FAQPage.html">FAQ</a></li>
+								<li><a href="../NewsPage.html" class="active">News</a></li>
+								<li><a href="../ContactsPage.html">Contact</a></li>
+								<li>
+									<button onclick="surprise('block')" class="logInButton active"><img src="../img/logo/logoOranNoBack.svg"><span>Log in</span></button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<div class="main">
+				<div onclick="surprise('none')" id="gray"></div> <!--Задний прозрачный фон для формы авторизации-->
+				<div class="logTabs" id="window">
+					<img onclick="surprise('none')" src="../img/logo/closeSvg.svg" class="close" alt="close"> <!--Картинка крестика-->
+					<input type="radio" name="log-btn" id="log-btn-1" value="" checked>
+					<label for="log-btn-1">Sign in</label>
+					<input type="radio" name="log-btn" id="log-btn-2" value="">
+					<label for="log-btn-2">Create an account</label>
+					<div id="form-1">
+						<div class="formText">Sign in to your account using email and password provided during registration.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignIn">
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogIn" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogIn" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedIn" class="checkbox" checked>
+						   		Keep me signed in
+						   	</label><br>
+						   	<a href="#" class="formText">Forgot password?</a><br>
+						   	<button type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign in</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					    <div class="formText last">Or sign in with:</div>
+					    <i class="fa fa-google" aria-hidden="true"></i>
+				    	<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				    	<i class="fa fa-twitter" aria-hidden="true"></i>
+				    	<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+				    	<i class="fa fa-telegram" aria-hidden="true"></i>
+				    	<i class="fa fa-instagram" aria-hidden="true"></i>
+					</div>
+					<div id="form-2">
+						<div class="formText">Registration takes less than a minute but gives you full control over your studying.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignUp">
+						   	<label> Name<br>
+						   		<input type='text' name='name' id="name" class="input" placeholder="Max" maxlength="15" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Surname<br>
+						   		<input type='text' name='surname' id="surname" class="input" placeholder="Velichko" maxlength="20" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogUp" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogUp" class="input" placeholder="Use at least 6 letters and numbers" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label> Confirm your password<br>
+						   		<input type='password' name='confpass' id="confPassLogUp" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedUp" class="checkbox" checked>
+						   		Remember me
+						   	</label><br>
+						   	<button  type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign up</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					</div>
+				</div>
+				<div class="wrapperForNews">
+					<div class="containerForNews">
+						<nav class="bread">&#60;&emsp;<a href="../NewsPage.html#news" class="prev">Back to News Page</a></nav>
+						<div class="headerNews">
+							<div class="headerNewsTitle" id="NewsName10">
+								swamp mirror
+							</div>
+							<div class="headerNewsBottom container">
+								<div class="headerNewsBottomLeft">
+									<p>By Kate Mihasjova | May 13, 2022 | 6 min to read</p>
+								</div>
+								<div class="headerNewsBottomRight">
+									<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+								</div>
+							</div>
+						</div>
+						<div class="containerForContent container">
+							<div class="content">
+								<picture>
+									<source srcset="../img/news/option16web.webp" type="image/webp">
+									<img src="../img/news/option16.jpg" alt="Swamp mirror" title="Swamp mirror">
+								</picture>
+								<article>
+									<p class="keywords">Keywords: Travelling, School news</p>
+									<p>This weekend I've crossed out one more point in my wish list. It was dedicated to a very marvelous and mysterious place, that is called Yelnya. I know we should talk about environmental problems such as recycling, global warming, pollution, deforestation and etc., but hold your horses! Give me a chance to share a recent experience with you and after that I’m going back to our topic.<p>
+
+									<p>What is swamp? Ok, as I've said it before, I understand an essence of forests, fields, mountains, seas and even desserts, but swamp is still incomprehensible for me. Bog wears a bone-chilling fame, but I want to broadcast some thoughts about a magnificence of this place. This trip was like a breath of fresh air especially when you wanted to renew yourself. I’ve been burst because of feelings! Alien nature smashes your feelings and bends your will. You're like a deaf in this voiceless swamp: the summer is coming, but black water portals without bottom are still freezing and the green is so young.</p>
+									<p>It is a magic powerful place. Probably, too ancient to be disturbed by nosy humanity. But ones it has been almost totally destroyed by fire. The terrifying fire burnt 80% of swamp's territory in 2002. The only reason was someone’s forgotten cigarette. After that terrible cataclysm hundreds of experts, volunteers, locals and world famous organizations tried to protect Yelnya. So why is Yelnya so special?</p>
+
+									<p>1) It is the oldest and biggest swamp in Europe. The age of Yelnya bog is about 9000 years. A central part of the bog is convex and 7 meters higher than the edge, that makes it unique.</p>
+
+									<p>2) One square swamp's kilometer produces twice bigger amount of clean oxygen, than the forest does.</p>
+
+									<p>3) Peat (a dark brown soil made from decaying plants that you can burn as fuel or that you can put around living plants to help them grow) absorbs CO2 and slows down climate warming because of &quot;greenhouse effect&quot;. If people destroy the bog, the peat will release into the atmosphere tons of that gase.</p>
+
+									<p>4) During spring and autumn migrations more than 5000 cranes and 10000 geese depend on Yelnya for rest and feeding. This is also a home for red book species of plants and animals, huge amount of which you can observe only here. Scientists here discovered white partridge, that had been considered extinct before.</p>
+
+									<p>5) Yelnya purifies water through moss and peat. They work as a natural filter, making the water harmless: vast stretches of moss produce a humic acid, that destroys bacterial hazard.</p> 
+									<p>Yelnya without lying is Europe's lungs, a home for million creatures and a huge water reservation, that is why we should keep an eye on it and, of course, it is worth visiting. </p>
+								</article>
+								<div class="more">
+									Read more about:<br>
+									<a href="https://euprojects.by/news/7-facts-about-the-famous-swamp-jelnia/" title="read more" target="_blank">Yelnya</a>
+								</div>
+								<div class="nextNews">
+									<p>Read next news:</p>
+									<div class="continerForNesCards container">
+										<div class="card">
+											<picture>
+												<source srcset="../img/news/option10web.webp" type="image/webp">
+												<img loading="lazy" src="../img/news/option10.jpg" alt="Inspiration" title="Inspiration">
+											</picture>
+											<div class="cardTitle"><a href="news8.html">where did the inspiration go?</a></div>
+											<div class="auth">Vlad Evtuhov | May 07, 2022</div>
+											<div class="shortPrev">Every creative person is subject to the whims of a fickle muse that doesn't always show up when we need it to.</div>
+											<div class="time">15 min to read</div>
+										</div>
+										<div class="card">
+											<picture>
+												<source srcset="../img/news/option11Web.webp" type="image/webp">
+												<img loading="lazy" src="../img/news/option11.jpg" alt="Michelangelo" title="Michelangelo">
+										</picture>
+											<div class="cardTitle"><a href="news7.html">what was Michelangelo like as a person?</a></div>
+											<div class="auth">Creighton E. Gilbert | May 01, 2022</div>
+											<div class="shortPrev">Many writers have described Michelangelo as the archetype of a brooding and difficult artist.</div>
+											<div class="time">10 min to read</div>
+										</div>
+										<div class="card">
+											<picture>
+												<source srcset="../img/news/option1Web.webp" type="image/webp">
+												<img loading="lazy" src="../img/news/option1.jpg" alt="Expressions of Gender" title="Expressions of Gender">
+											</picture>
+											<div class="cardTitle"><a href="news6.html">excavating Ancient Expressions of Gender</a></div>
+											<div class="auth">Roko Rumora | April 25, 2022</div>
+											<div class="shortPrev">An exhibition of Pompeian frescoes provides a window into how ancient Roman painters understood and represented gender.</div>
+											<div class="time">17 min to read</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='rightSideBar'>
+								<div class="advertisment">
+									<p>Advertisment</p>
+									<a href="#" target="_blank" title="Read more">
+										<picture>
+											<source srcset="../img/advertisment/adv4Web.webp" type="image/webp">
+											<img src="../img/advertisment/adv4Jp.jpg" alt="Advertisment" title="Read more">
+										</picture>
+									</a>
+								</div>
+								<div class="mostReadStories">
+									<p>Most-Read news:</p>
+									<div class="miniCard container">
+										<picture>
+											<source srcset="../img/news/option16web.webp" type="image/webp">
+											<img src="../img/news/option16.jpg" alt="Swamp mirror" title="Swamp mirror">
+										</picture>
+										<div class="miniCardText"><a href="news9.html">swamp mirror</a></div>
+										<div class="number">1</div>
+									</div>
+									<div class="miniCard container">
+										<picture>
+												<source srcset="../img/news/option7web.webp" type="image/webp">
+												<img src="../img/news/option7.jpg" alt="News about architecture" title="beast, god<br> and line">
+										</picture>
+										<div class="miniCardText"><a href="news10.html">beast, god and line</a></div>
+										<div class="number">2</div>
+									</div>
+									<div class="miniCard container last">
+										<picture>
+												<source srcset="../img/news/option5Web.webp" type="image/webp">
+												<img src="../img/news/option5.jpg" alt="A Former Center" title="A Former Center">
+										</picture>
+										<div class="miniCardText"><a href="news5.html">A Former Center</a></div>
+										<div class="number">3</div>
+									</div>
+								</div>
+								<div class="wrapperForSubscribe container Column">
+									<div class="subTitle">Subscribe to our newsletter!</div>
+									<form method=post action="http://fe.it-academy.by/TestForm.php" name="subscribeNewsletter">
+										<label> Your Name<br>
+											<span><i class="fa fa-user" aria-hidden="true"></i></span>
+									   		<input type='text' name='subscribeName' id="subscribeName" class="subscribeName" placeholder="Max" maxlength="15" required pattern="^[A-Za-z]{2,}">
+									   	</label><br>
+									   	<label> Your Email<br>
+									   		<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+									   		<input type='email' name='subscribeEmail' id="subscribeEmail" class="subscribeEmail" placeholder="Extravaganza07@gmail.com" required>
+									   	</label><br>
+									   	<label>
+									   		<input type='checkbox' name='subscribeLow' id="subscribeLow" class="checkbox" checked>
+									   		I agree to receive communications from Createx Online School
+									   	</label><br>
+									   	<button  type="submit" class="waveBtn">
+											<span class="waveBtnText">Subscribe</span>
+											<span class="waveBtnWaves"></span>
+									   	</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="preFooterConteiner">
+				<div class="preFooter">
+					<div class="part Column">
+						<a href="../MainPage.html" class="logo">
+							<picture>
+									<source srcset="../img/logo/logo.webp" type="image/webp">
+									<img src="../img/logo/logoPNG.png" alt="Logo">
+								</picture>
+								art school
+						</a>
+						<div class="notImportantText">
+							Our Art School is a leader in online studying. Founded by artist Noah Yoker, our site has been covering the art scene since 2005. Presenting a lively mix of courses,programs, news, reviews and interviews, Art School employs some of the best art teachers, journalists and critics on contemporary art.
+						</div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">site map</div>
+						<ul>
+							<li><a href="../MainPage.html">Home</a></li>
+							<li><a href="../AboutPage.html">About</a></li>
+							<li><a href="../CoursesPage.html">Courses</a></li>
+							<li><a href="../FAQPage.html">FAQ</a></li>
+							<li><a href="../NewsPage.html">News</a></li>
+							<li><a href="../ContactsPage.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">courses</div>
+						<ul>
+							<li><a href="../courses/FineArtCourse.html">Fine Art</a></li>
+							<li><a href="../courses/GraphCourse.html">Graphic Design</a></li>
+							<li><a href="../courses/GrafCourses.html">Graffiti</a></li>
+							<li><a href="../courses/IllCourse.html">Illustration</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">contact us</div>
+						<div class="phone"><img src="../img/logo/cellphone.svg"><a href="tel:+74055550128">+7 (405) 555-0128</a></div>
+						<div class="mail"><img src="../img/logo/mail.svg"><a href="mailto:hiArtSchool@.com">hiArtSchool@.com</a></div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">privacy policy</div>
+						<div class="notImportantText">
+							This Privacy Policy is meant to help you understand what information we collect and why we collect it. Additional information can be found <a href="../FAQPage.html" title="Go to FAQ">HERE</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="notImportantText">
+					&copy; 2022 by <span>art school</span>. All rights reserved.
+				</div>
+				<div><a href="#NewsName10"><span>back to top</span></a></div>
+			</footer>	
+		<script 
+		src="https://code.jquery.com/jquery-3.6.0.min.js" 
+		type="text/javascript" 
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous">	
+		</script>
+		<script src="../js/scriptHeader.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			//Функция показа окна Log in//
+			function surprise(state){
+				document.getElementById('window').style.display = state;
+				document.getElementById('gray').style.display = state;
+			}
+		</script>
+		<script src="https://yastatic.net/share2/share.js" async></script>
+	</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>News.</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<meta name="HandheldFriendly" content="True"/> <!--В некоторых случаях смартфоны автоматически изменяют масштаб страницы, лучше эту возможность отключать-->
+		<!-- saved from url=(0014)about:internet -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> <!--Для включения сглаживания шрифтов -->
+		<meta http-equiv="cleartype" content="on"/> <!--Чтобы переключить Internet Explorer в режим последней версии -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="../font-awesome/css/font-awesome.min.css"> <!--для иконок-->
+		<link rel="stylesheet" type="text/css" href="../css/styles_general.css"> <!--CSS общие для всех документов-->
+		<link rel="stylesheet" type="text/css" href="../css/styles_header_footer.css"> <!--CSS для хэдера-->
+		<link rel="stylesheet" type="text/css" href="../css/NewsStyle.css"> <!--CSS для данной страницы-->
+		<link rel="icon" href="../logo32.ico"> <!-- 32×32 лучше, чем 16-->
+		<link rel="icon" href="../img/icon/logoWebP.webp" type="image/webp">
+		<link rel="icon" href="../img/icon/logoSvg.svg" type="image/svg+xml"> <!--Не все поддерживают WebP-->
+		<link rel="apple-touch-icon" href="../img/icon/logoPg180.png">  <!-- Для apple 180×180 -->
+		<!--<link rel="manifest" href="manifest.webmanifest">-->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav class="wrapperNav">
+					<div class="headerBody">
+						<div class="leftNav">
+							<a href="MainPage.html" class="logo">
+								<picture>
+									<source srcset="../img/logo/logo.webp" type="image/webp">
+									<img src="../img/logo/logoPNG.png" alt="Logo">
+								</picture>
+								art school
+							</a>
+						</div>
+						<div class="headerBurger">
+							<span></span>
+						</div>
+						<div class="rightNav">
+							<ul>
+								<li><a href="../MainPage.html">Home</a></li>
+								<li><a href="../AboutPage.html">About</a></li>
+								<li><a href="../CoursesPage.html">Courses</a></li>
+								<li><a href="../FAQPage.html">FAQ</a></li>
+								<li><a href="../NewsPage.html" class="active">News</a></li>
+								<li><a href="../ContactsPage.html">Contact</a></li>
+								<li>
+									<button onclick="surprise('block')" class="logInButton active"><img src="../img/logo/logoOranNoBack.svg"><span>Log in</span></button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<div class="main">
+				<div onclick="surprise('none')" id="gray"></div> <!--Задний прозрачный фон для формы авторизации-->
+				<div class="logTabs" id="window">
+					<img onclick="surprise('none')" src="../img/logo/closeSvg.svg" class="close" alt="close"> <!--Картинка крестика-->
+					<input type="radio" name="log-btn" id="log-btn-1" value="" checked>
+					<label for="log-btn-1">Sign in</label>
+					<input type="radio" name="log-btn" id="log-btn-2" value="">
+					<label for="log-btn-2">Create an account</label>
+					<div id="form-1">
+						<div class="formText">Sign in to your account using email and password provided during registration.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignIn">
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogIn" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogIn" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedIn" class="checkbox" checked>
+						   		Keep me signed in
+						   	</label><br>
+						   	<a href="#" class="formText">Forgot password?</a><br>
+						   	<button type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign in</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					    <div class="formText last">Or sign in with:</div>
+					    <i class="fa fa-google" aria-hidden="true"></i>
+				    	<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				    	<i class="fa fa-twitter" aria-hidden="true"></i>
+				    	<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+				    	<i class="fa fa-telegram" aria-hidden="true"></i>
+				    	<i class="fa fa-instagram" aria-hidden="true"></i>
+					</div>
+					<div id="form-2">
+						<div class="formText">Registration takes less than a minute but gives you full control over your studying.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignUp">
+						   	<label> Name<br>
+						   		<input type='text' name='name' id="name" class="input" placeholder="Max" maxlength="15" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Surname<br>
+						   		<input type='text' name='surname' id="surname" class="input" placeholder="Velichko" maxlength="20" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogUp" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogUp" class="input" placeholder="Use at least 6 letters and numbers" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label> Confirm your password<br>
+						   		<input type='password' name='confpass' id="confPassLogUp" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedUp" class="checkbox" checked>
+						   		Remember me
+						   	</label><br>
+						   	<button  type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign up</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					</div>
+				</div>
+				<div class="wrapperForNews">
+					<div class="containerForNews">
+						<nav class="bread">&#60;&emsp;<a href="../NewsPage.html#news" class="prev">Back to News Page</a></nav>
+						<div class="headerNews">
+							<div class="headerNewsTitle" id="NewsName6">
+								How a Former KKK Headquarters in Texas Is Being Transformed into a Center for Arts and Healing
+							</div>
+							<div class="headerNewsBottom container">
+								<div class="headerNewsBottomLeft">
+									<p>By Xyo Jaison | April 17, 2022 | 15 min to read</p>
+								</div>
+								<div class="headerNewsBottomRight">
+									<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+								</div>
+							</div>
+						</div>
+						<div class="containerForContent container">
+							<div class="content">
+								<picture>
+										<source srcset="../img/news/option5Web.webp" type="image/webp">
+										<img src="../img/news/option5.jpg" alt="A Former Center" title="A Former Center">
+								</picture>
+								<article>
+									<p class="keywords">Keywords: Experts say, Art Museum, Modern Art</p>
+									<p>In 1921, white union workers at the meatpacker Swift &amp; Company in Fort Worth, Texas, went on strike. Fred Rouse &mdash; a Black man with a family &mdash; was hired as a butcher by the company to replace those striking. On a December morning, he walked to the city's Stockyards for work, crossing picket lines and racial lines. Walking home that night, he was attacked by strike agitators and left for dead. Five days later, while recuperating in the hospital, a mob broke into his room. That night Rouse became the only reported Black victim of lynching in Fort Worth, according to the Equal Justice Initiative's <a href="https://lynchinginamerica.eji.org/explore" title="learn more" target="_blank">Lynching in America project</a>.<p>
+
+									<p>At the time, Texas was home to one of the largest chapters of the Ku Klux Klan in the United States. The white supremacist group's Fort Worth headquarters &mdash; or &quot;Klavern&quot; &mdash; was a tall, cavernous brick auditorium at 1012 North Main Street, completed in 1924. The ground floor alone is 22,000 square feet, with an auditorium designed to fit 2,000 people.</p>
+
+									<p>The KKK sold the building in 1927, and over the years, as it passed through several owners, its insides decayed, though its imposing exterior has endured, casting a long shadow over the town. But in the coming years, the building is going to start looking very different when it becomes host to a new arts center in Rouse's name that will attempt to account for the site’s ugly history while also acting as a space for renewal.</p>
+
+									<p>In June 2019, Adam W. McKinney, a trained ballet dancer and a professor at TCU College of Fine Arts, and his partner, Daniel Banks, learned that the building's then owners had filed an application with the city to have it demolished. McKinney and Banks had already imagined its second life as a hub for art and healing that would serve the city where Rouse's descendants still live. </p>
+
+									<p>The idea, Banks said, was to bring &quot;groups together that were frequently pitted against one another, or siloed and not in contact. We live in a city where cultural groups are broken up by geography as well. So, we had to talk not only about intergroup relationships but intragroup relationships.&quot;</p>
+
+									<p>As McKinney and Banks began to conceive their proposed center, Fort Worth's Historic and Cultural Landmark Commission imposed a six-month delay of demolition on the building, during which the owners were required to explore alternatives with interested parties. Meanwhile, McKinney and Banks began meeting with council members to garner support for the repurposing. By September, seven other Fort Worth &mdash; based cultural organizations and entities representing groups once targeted by the Klan had joined the campaign. Synergy was rising and the scope of the project was expanding.</p>
+
+									<p>The coalition, which calls itself Transform 1012 N. Main Street, had the backing of state and local branches of NAACP, as well as the National Trust for Historic Preservation, and had even achieved nonprofit status. Grants trickled in from the Mellon Foundation, the Ford Foundation, and the National Endowment of the Arts. In December 2021, Transform 1012 acquired the building with a partial donation from the former owners and the Rainwater Charitable Foundation. Fred Rouse III also joined the board in 2022, as a representative of the family. Once renovations are complete, the auditorium will reopen as The Fred Rouse Center for Arts and Community Healing.</p> 
+
+									<p>The city of Fort Worth, a 40-minute drive from Dallas, is in flux. According to the U.S. Census Bureau, it was the fastest growing large city in America between 2010 and 2020. That's an average increase of some 20,000 new residents annually. It can be called a global majority city. In 2020, around 35 percent of the population identified as Hispanic, and 19 percent identified as Black. Those numbers are expected to rise in the next decade.</p> 
+
+									<p>The city has several celebrated art museums &mdash; Kimbell Art Museum, Amon Carter Museum of American Art, and the Modern Art Museum of Fort Worth &mdash; all of which have responded, to some degree, to the nationwide push to better engage with historically underserved communities. But there are gaps in the city's arts infrastructure, Transform 1012 contends.</p>
+
+									<p>Roman Ramirez, a leader of the Mexican folk dance company SOL Ballet Folklorico and Fort Worth native, pointed out that there are too few performing art spaces, prompting emerging artists to decamp for Dallas or abandon the field.</p> 
+
+									<p>&quot;The community in general was in need of spaces that were democratic,&quot; Ayesha Ganguly, the founder of the Fort Worth–based community outreach group Window to Your World, said. &quot;Right from the beginning our philosophy is asking people what they desire from a space like this. Does [Fort Worth] want a space to bring in groups to participate at reasonable class prices compared to the larger spaces that are inaccessible to them? Do they want creative outlets that are beyond traditional modes of storytelling?&quot;</p>
+
+									<p>The Fred Rouse Center's facilities will include a state-of-the-art performance space, exhibit spaces dedicated to social justice and civil rights artwork, and affordable live and work studios for artists-in-residence.</p>
+
+									<p>&quot;How inspiring it will be for one of my students to look up and see a ballet class, or look and see art displayed, it can open their minds to show them that they can do that,&quot; Ramirez said.</p>
+
+									<p>Life skills like leadership workshops and services for LGBTQ+ youth will also be offered. They've even imagined an outdoor urban agriculture market to address food deserts in historically Black and Brown Fort Worth neighborhoods, as well as an artisan marketplace.</p>
+
+									<p>The center also addresses a more existential concern of what can be done with contested monuments. The year after Transform 1012 was founded, America experienced the largest, sustained civil rights actions since the 1960s.</p>
+
+									<p>&quot;I don't think Fort Worth is an anomaly,&quot; said McKinney, who also leads the education &mdash; centered nonprofit Tarrant County Coalition for Peace and Justice. &quot;I think that our country and our world has not reckoned with histories of racism and slavery, which drove colonialism. We are feeling the vestiges of that history locally, regionally, certainly nationally and internationally.&quot;</p>
+
+									<p>The debate around Confederate statues and physical markers of white supremacy wasn't new in 2020, but the Black Lives Matter movement intensified the need for resolution. Throughout the country statues were toppled by legislative or civilian action; they're still falling. According to data collected by the Southern Poverty Law Center, 15 monuments linked to the Confederacy were removed from Texas land last year 2021. The other side says leave them untouched. The Fred Rouse Center, which is set to open in 2025, suggests reimagination as the way forward.</p> 
+
+									<p>Inside the auditorium is a custom-built stage that was once host to racist Klan pageantry, such as minstrel games and rallies. Few would judge Transform 1012 for tearing that stage down amid renovations, but the team hopes it will serve aspiring LGBQT and BIPOC dancers and performance artists in Fort Worth, remaking the stage as a renewable source of cleansing artistic energy.</p>
+
+									<p>&quot;We believed, and still believe, it is inappropriate to demolish the building because we felt that a history pertaining to racism, racial terror violence, and white supremacy would be lost,&quot; McKinney said. &quot;In so doing, the reoccurrence would be that much more easily reproducible.&quot;</p>	
+								</article>
+								<div class="more">
+									Read more about:<br>
+									<a href="https://en.wikipedia.org/wiki/Fort_Worth,_Texas" title="read more on Wiki" target="_blank">Fort Worth</a>
+								</div>
+								<div class="nextNews">
+									<p>Read next news:</p>
+									<div class="continerForNesCards container">
+										<div class="card">
+										<picture>
+												<source srcset="../img/news/option9web.webp" type="image/webp">
+												<img loading="lazy" src="../img/news/option9.jpg" alt="Prehistoric Mine" title="Prehistoric Mine">
+										</picture>
+											<div class="cardTitle"><a href="news4.html">The Oldest Prehistoric Mine</a></div>
+											<div class="auth">Shanti Escalante | April 03, 2022</div>
+											<div class="shortPrev">Indigenous peoples began quarrying for ochre nearly 3,000 years ago.</div>
+											<div class="time">8 min to read</div>
+										</div>
+										<div class="card">
+											<picture>
+													<source srcset="../img/news/option3Web.webp" type="image/webp">
+													<img loading="lazy" src="../img/news/option3.jpg" alt="Special price" title="Special price">
+											</picture>
+											<div class="cardTitle"><a href="news3.html">Only &#36;39.99!</a></div>
+											<div class="auth">Cornel Shvarz | March 23, 2022</div>
+											<div class="shortPrev">Special price for courses: only &#36;39.99! Hurry up now!</div>
+											<div class="time">5 min to read</div>
+										</div>
+										<div class="card">
+											<picture>
+													<source srcset="../img/news/option17Web.webp" type="image/webp">
+													<img loading="lazy" src="../img/news/option17.jpg" alt="Banksy" title="Banksy">
+											</picture>
+											<div class="cardTitle"><a href="news2.html">&quot;I am NOT Banksy&quot;</a></div>
+											<div class="auth">Shanti Escalante | March 20, 2022</div>
+											<div class="shortPrev">Not even Banksy, a renowned prankster, could have predicted this weird turn of events.</div>
+											<div class="time">6 min to read</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class='rightSideBar'>
+								<div class="advertisment">
+									<p>Advertisment</p>
+									<a href="#" target="_blank" title="Read more">
+										<picture>
+											<source srcset="../img/advertisment/adv4Web.webp" type="image/webp">
+											<img src="../img/advertisment/adv4Jp.jpg" alt="Advertisment" title="Read more">
+										</picture>
+									</a>
+								</div>
+								<div class="mostReadStories">
+									<p>Most-Read news:</p>
+									<div class="miniCard container">
+										<picture>
+											<source srcset="../img/news/option16web.webp" type="image/webp">
+											<img src="../img/news/option16.jpg" alt="Swamp mirror" title="Swamp mirror">
+										</picture>
+										<div class="miniCardText"><a href="news9.html">swamp mirror</a></div>
+										<div class="number">1</div>
+									</div>
+									<div class="miniCard container">
+										<picture>
+												<source srcset="../img/news/option7web.webp" type="image/webp">
+												<img src="../img/news/option7.jpg" alt="News about architecture" title="beast, god<br> and line">
+										</picture>
+										<div class="miniCardText"><a href="news10.html">beast, god and line</a></div>
+										<div class="number">2</div>
+									</div>
+									<div class="miniCard container last">
+										<picture>
+												<source srcset="../img/news/option5Web.webp" type="image/webp">
+												<img src="../img/news/option5.jpg" alt="A Former Center" title="A Former Center">
+										</picture>
+										<div class="miniCardText"><a href="news5.html">A Former Center</a></div>
+										<div class="number">3</div>
+									</div>
+								</div>
+								<div class="wrapperForSubscribe container Column">
+									<div class="subTitle">Subscribe to our newsletter!</div>
+									<form method=post action="http://fe.it-academy.by/TestForm.php" name="subscribeNewsletter">
+										<label> Your Name<br>
+											<span><i class="fa fa-user" aria-hidden="true"></i></span>
+									   		<input type='text' name='subscribeName' id="subscribeName" class="subscribeName" placeholder="Max" maxlength="15" required pattern="^[A-Za-z]{2,}">
+									   	</label><br>
+									   	<label> Your Email<br>
+									   		<span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+									   		<input type='email' name='subscribeEmail' id="subscribeEmail" class="subscribeEmail" placeholder="Extravaganza07@gmail.com" required>
+									   	</label><br>
+									   	<label>
+									   		<input type='checkbox' name='subscribeLow' id="subscribeLow" class="checkbox" checked>
+									   		I agree to receive communications from Createx Online School
+									   	</label><br>
+									   	<button  type="submit" class="waveBtn">
+											<span class="waveBtnText">Subscribe</span>
+											<span class="waveBtnWaves"></span>
+									   	</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="preFooterConteiner">
+				<div class="preFooter">
+					<div class="part Column">
+						<a href="../MainPage.html" class="logo">
+							<picture>
+									<source srcset="../img/logo/logo.webp" type="image/webp">
+									<img src="../img/logo/logoPNG.png" alt="Logo">
+								</picture>
+								art school
+						</a>
+						<div class="notImportantText">
+							Our Art School is a leader in online studying. Founded by artist Noah Yoker, our site has been covering the art scene since 2005. Presenting a lively mix of courses,programs, news, reviews and interviews, Art School employs some of the best art teachers, journalists and critics on contemporary art.
+						</div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">site map</div>
+						<ul>
+							<li><a href="../MainPage.html">Home</a></li>
+							<li><a href="../AboutPage.html">About</a></li>
+							<li><a href="../CoursesPage.html">Courses</a></li>
+							<li><a href="../FAQPage.html">FAQ</a></li>
+							<li><a href="../NewsPage.html">News</a></li>
+							<li><a href="../ContactsPage.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">courses</div>
+						<ul>
+							<li><a href="../courses/FineArtCourse.html">Fine Art</a></li>
+							<li><a href="../courses/GraphCourse.html">Graphic Design</a></li>
+							<li><a href="../courses/GrafCourses.html">Graffiti</a></li>
+							<li><a href="../courses/IllCourse.html">Illustration</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">contact us</div>
+						<div class="phone"><img src="../img/logo/cellphone.svg"><a href="tel:+74055550128">+7 (405) 555-0128</a></div>
+						<div class="mail"><img src="../img/logo/mail.svg"><a href="mailto:hiArtSchool@.com">hiArtSchool@.com</a></div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">privacy policy</div>
+						<div class="notImportantText">
+							This Privacy Policy is meant to help you understand what information we collect and why we collect it. Additional information can be found <a href="../FAQPage.html" title="Go to FAQ">HERE</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="notImportantText">
+					&copy; 2022 by <span>art school</span>. All rights reserved.
+				</div>
+				<div><a href="#NewsName6"><span>back to top</span></a></div>
+			</footer>	
+		<script 
+		src="https://code.jquery.com/jquery-3.6.0.min.js" 
+		type="text/javascript" 
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous">	
+		</script>
+		<script src="../js/scriptHeader.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			//Функция показа окна Log in//
+			function surprise(state){
+				document.getElementById('window').style.display = state;
+				document.getElementById('gray').style.display = state;
+			}
+		</script>
+		<script src="https://yastatic.net/share2/share.js" async></script>
+	</body>
+</html>

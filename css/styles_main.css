@@ -1,0 +1,384 @@
+.paralax{
+	min-height: 1000px;
+	background: url(../img/fones/mainTitleFoneJp.jpg) center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+/*редупреждение*/
+.warningInf{
+	background-color: #ededed;
+}
+.warningInf div{
+	margin-bottom: 20px;
+	color: #080808;
+}
+.warningLogo > img{
+	width: 20px;
+}
+.warningInf .warningText{
+	width: 50%;
+	text-align: center;
+	margin-bottom: 45px;
+}
+.warningText > a{
+	text-decoration: underline;
+	color: #080808;
+}
+/*Столбцы*/
+ .NextCursesLink, .LatestNewsLink{
+	padding: 20px 0px 50px 0px;
+}
+.PrewCursesInfo , .NextCursesAbout{
+	-ms-flex-wrap:wrap;
+	flex-wrap:wrap;
+	text-align: center;
+}
+.PrewCursesInfo > div, .NextCursesAbout > div{
+	max-width: 202px;
+	margin: 40px 12px 20px 12px;
+}
+.prewCursesAbout{
+	font-size: 15px;
+	margin-top: 30px;
+}
+.PrewCursesInfo .Title, .NextCursesAbout .Title{
+	text-transform: none;
+}
+/*Работы студентов*/
+.studentsWorksExampls{
+	max-width: 1500px;
+	display: flex;
+	margin: 10px 0px 40px 0px;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+}
+.studentsWorksExampls a > picture > img{
+	width: 360px;
+	margin-bottom: 9px;
+}
+.studentsWorksExampls a > picture:hover{ 
+	opacity: 0.5;
+}
+.studentsWorksLink{
+	display: none;
+	cursor: pointer;
+	margin: 20px 0px 60px 0px;
+}
+#phrase2{
+	display: none;
+}
+.studentsWorksLink.spoiler #phrase1{
+	display: none;
+}
+.studentsWorksLink.spoiler #phrase2{
+	display: inline;
+}
+#up {
+	float: left;
+	height: 20px;
+	margin-right: 6px;
+}
+.studentsWorksLink.spoiler #up{
+	-webkit-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.difficult{ 
+	-ms-flex-wrap: wrap; 
+	flex-wrap: wrap;
+	-ms-flex-pack: distribute;
+	justify-content: space-around;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	margin: 40px 0px 10px 0px;
+}
+ .NextCursesLink a:hover{
+	color: black;
+}
+/*Новости*/
+.paralaxNews{
+	min-height: 600px;
+	background: url(../img/fones/option8Jp.jpg) center no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	color: white;
+}
+.paralaxNewsText{
+	text-transform: uppercase;
+	font: 400 30px sans-serif;
+	margin: 20px 0px 30px 0px;
+	text-align: center;
+}
+.LatestNewsTitle{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	color: white;
+	min-width: 0;
+}
+.LatestNewsLink a:hover, .popupInfo{
+	color: white;
+}
+.PrewCursesInfo .mainText, .PrewCursesInfo .Title,
+.NextCursesAbout .mainText, .NextCursesAbout .Title, .NextCursesLink{
+	opacity:0;
+	position: relative;
+}
+.animation{
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s; 
+	-webkit-animation: show 1s ease-in 1 300ms forwards; 
+	animation: show 1s ease-in 1 300ms forwards; 
+}
+.animationTwo{
+	-webkit-transition: 1s;
+	-o-transition: 1s;
+	transition: 1s;
+	-webkit-animation: linkOrange 2s linear 1 1s forwards;
+	animation: linkOrange 2s linear 1 1s forwards; 
+}
+.paralaxNews a.button {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 38px;
+    border-radius: 25px;
+    border: 1px solid #000000;
+    background-color: #000000;
+    font: 400 20px sans-serif;
+    color: #ffffff;
+    -webkit-box-shadow: #848484 0px 0px 40px 0px;
+    box-shadow: #848484 0px 0px 40px 0px;
+}
+.paralaxNews a.button:hover,.paralaxNews a.button:active,.paralaxNews a.button:focus{
+	border-color: #E84300;
+    background-color:  #E84300;
+}
+/*Попапы*/
+.popup{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	overflow-y: auto;
+	overflow-x: hidden;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s;
+}
+.popup:target .popupContent{
+	-webkit-transform: translate(0px, 0px);
+	-ms-transform: translate(0px, 0px);
+	transform: translate(0px, 0px);
+	opacity: 1;
+}
+.popupArea{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.popupBody{
+	min-height: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	padding: 0px 10px;
+}
+.popupContent{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	background-color: black;
+	max-width: 94%;
+	-webkit-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	transition: all 0.5s ease 0s; 
+	opacity: 0;
+}
+.popupContent > a{
+	color: white;
+	font: 400 20px sans-serif;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+.popupContent picture{
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 70%;
+	flex: 0 0 70%;
+	padding-right: 20px;
+}
+.popupContent picture > img{
+	width: 100%;
+	height: 100%;
+	-o-object-fit: cover;
+	object-fit: cover;
+}
+.popupInfo{
+	margin: 15px;
+	position: relative;
+}
+.popupInfo > .ya-share2{
+	position: absolute;
+	left: 2px;
+	bottom: 5px;
+	margin-top: 5px;
+}
+.popupTitle{
+	margin: 20px 0px;
+	text-align: center;
+}
+.popup:target{
+	opacity: 1;
+	visibility: visible;
+}
+
+@media all and (max-width: 1370px){
+	.studentsWorksExampls a > picture > img{
+		width: 400px;
+	}
+}
+@media all and (max-width: 1240px){
+	.paralax{
+		min-height: 700px;
+	}
+}
+@media all and (max-width: 1215px){
+	.studentsWorksExampls a > picture > img{
+		width: 560px;
+	}
+}
+@media all and (max-width: 1133.60px){
+	.studentsWorksLink{
+		display: block;
+	}
+	.studentsWorksExampls a > picture > img{
+		width: 100%;
+		height: 100%;
+		-o-object-fit: cover;
+		object-fit: cover;
+	}
+	.studentsWorksExampls a > picture{
+		-webkit-box-flex:  0;
+		-ms-flex:  0 0 70%;
+		flex:  0 0 70%;
+	}
+	.studentsWorksExampls a{
+		margin-bottom: 5px;
+	}
+}
+@media all and (max-width: 1020px){
+	.paralax{
+		min-height: 600px;
+	}
+}
+@media all and (max-width: 955px){
+	.paralaxNews{
+		min-height: 700px;
+	}
+	.popupInfo{
+		margin: 10px;
+	}
+	.popupContent picture{
+		padding-right: 15px;
+	}
+	.popupTitle{
+		font-size: 15px;
+		margin: 15px 0px;
+	}
+	.popupText{
+		font-size: 12px;
+		margin: 0px 0px 5px 0px;
+	}
+	.paralaxNewsText{
+		font-size: 20px;
+	}
+}
+@media all and (max-width: 728px){
+	.paralax, .paralaxNews{
+		min-height: 500px;
+	}
+	.mainTitle{
+		height: 331px;
+		width: 210px;
+	}
+	.mainText{
+		font-size:58px;
+		line-height: 1;
+	}
+	.popupContent{
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+	.popupContent picture{
+		-webkit-box-flex: 1;
+		-ms-flex: 1 1 auto;
+		flex: 1 1 auto;
+		padding-right: 0px;
+	}
+	.popupClose{
+		display: none;
+	}
+	.popupInfo{
+		margin: 5px;
+	}
+	.popupTitle{
+		font-size: 13px;
+		margin: 10px 0px;
+	}
+	.popupText{
+		font-size: 12px;
+		margin: 0px 0px 40px 0px;
+	}
+	.PrewCursesLink, .studentsWorksLink, .NextCursesLink, .LatestNewsLink{
+		padding: 10px 0px 10px 0px;
+	}
+	.PrewCursesInfo > div, .NextCursesAbout > div {
+    	margin: 10px 12px 10px 12px;
+	}
+}
+
+@keyframes show{
+	0%{
+		opacity:0;
+		left:-50%;
+	}
+	100% {
+		opacity:1;
+		left: 0%;
+	}
+}
+@keyframes linkOrange{
+	0%{
+		opacity:0;
+		top:30%;
+	}
+	20%{
+		opacity: 1;
+	}
+	100% {
+		opacity:1;
+		top: 0%;
+	}
+}
