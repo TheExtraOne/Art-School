@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Art school.</title>
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<meta name="HandheldFriendly" content="True"/> <!--В некоторых случаях смартфоны автоматически изменяют масштаб страницы, лучше эту возможность отключать-->
+		<!-- saved from url=(0014)about:internet -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/> <!--Для включения сглаживания шрифтов -->
+		<meta http-equiv="cleartype" content="on"/> <!--Чтобы переключить Internet Explorer в режим последней версии -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css"> <!--для иконок-->
+		<link rel="stylesheet" type="text/css" href="css/styles_general.css"> <!--CSS общие для всех документов-->
+		<link rel="stylesheet" type="text/css" href="css/styles_header_footer.css"> <!--CSS для хэдера-->
+		<link rel="stylesheet" type="text/css" href="css/styles_main.css"> <!--CSS для данной страницы-->
+		<link rel="icon" href="logo32.ico"> <!-- 32×32 лучше, чем 16-->
+		<link rel="icon" href="img/icon/logoWebP.webp" type="image/webp">
+		<link rel="icon" href="img/icon/logoSvg.svg" type="image/svg+xml"> <!--Не все поддерживают WebP-->
+		<link rel="apple-touch-icon" href="img/icon/logoPg180.png">  <!-- Для apple 180×180 -->
+	</head>
+	<body>
+		<div class="wrapper">
+			<header>
+				<nav class="wrapperNav">
+					<div class="headerBody">
+						<div class="leftNav">
+							<a href="#" class="logo">
+								<picture>
+									<source srcset="img/logo/logo.webp" type="image/webp">
+									<img src="img/logo/logoPNG.png" alt="Logo">
+								</picture>
+								art school.
+							</a>
+						</div>
+						<div class="headerBurger">
+							<span></span>
+						</div>
+						<div class="rightNav">
+							<ul>
+								<li><a href="#" class="active">Home</a></li>
+								<li><a href="AboutPage.html">About</a></li>
+								<li><a href="CoursesPage.html">Courses</a></li>
+								<li><a href="FAQPage.html">FAQ</a></li>
+								<li><a href="NewsPage.html">News</a></li>
+								<li><a href="ContactsPage.html">Contact</a></li>
+								<li>
+									<button onclick="surprise('block')" class="logInButton active"><img src="img/logo/logoOranNoBack.svg"><span>Log in</span></button>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</header>
+			<div class="main">
+				<div onclick="surprise('none')" id="gray"></div> <!--Задний прозрачный фон для формы авторизации-->
+				<div class="logTabs" id="window">
+					<img onclick="surprise('none')" src="img/logo/closeSvg.svg" class="close" alt="close"> <!--Картинка крестика-->
+					<input type="radio" name="log-btn" id="log-btn-1" value="" checked>
+					<label for="log-btn-1">Sign in</label>
+					<input type="radio" name="log-btn" id="log-btn-2" value="">
+					<label for="log-btn-2">Create an account</label>
+					<div id="form-1">
+						<div class="formText">Sign in to your account using email and password provided during registration.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignIn">
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogIn" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogIn" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedIn" class="checkbox" checked>
+						   		Keep me signed in
+						   	</label><br>
+						   	<a href="#" class="formText">Forgot password?</a><br>
+						   	<button type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign in</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					    <div class="formText last">Or sign in with:</div>
+					    <i class="fa fa-google" aria-hidden="true"></i>
+				    	<i class="fa fa-facebook-official" aria-hidden="true"></i>
+				    	<i class="fa fa-twitter" aria-hidden="true"></i>
+				    	<i class="fa fa-linkedin-square" aria-hidden="true"></i>
+				    	<i class="fa fa-telegram" aria-hidden="true"></i>
+				    	<i class="fa fa-instagram" aria-hidden="true"></i>
+					</div>
+					<div id="form-2">
+						<div class="formText">Registration takes less than a minute but gives you full control over your studying.</div>
+					    <form method=post action="http://fe.it-academy.by/TestForm.php" name="formForSignUp">
+						   	<label> Name<br>
+						   		<input type='text' name='name' id="name" class="input" placeholder="Max" maxlength="15" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Surname<br>
+						   		<input type='text' name='surname' id="surname" class="input" placeholder="Velichko" maxlength="20" required pattern="^[A-Za-z]{2,}">
+						   	</label><br>
+						   	<label> Email<br>
+						   		<input type='email' name='email' id="emailLogUp" class="input" placeholder="Extravaganza07@gmail.com" required>
+						   	</label><br>
+						   	<label> Password<br>
+						   		<input type='password' name='pass' id="passLogUp" class="input" placeholder="Use at least 6 letters and numbers" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label> Confirm your password<br>
+						   		<input type='password' name='confpass' id="confPassLogUp" class="input" required pattern="^[0-9A-Za-z]{6,}">
+						   	</label><br>
+						   	<label>
+						   		<input type='checkbox' name='signedIn' id="signedUp" class="checkbox" checked>
+						   		Remember me
+						   	</label><br>
+						   	<button type="submit" class="waveBtn">
+								<span class="waveBtnText">Sign up</span>
+								<span class="waveBtnWaves"></span>
+						   	</button>
+					    </form>
+					</div>
+				</div>
+				<div class="paralax container">
+					<div class="mainTitle container">
+						<div class="mainText">cre<wbr/>ativ<wbr/>ity.</div>
+						<div class="mnemonic"><a href="#cursesTitle">&#10095;</a></div>
+					</div>
+				</div>
+				<div class="warningInf container Column">
+					<div class="Title">safety first</div>
+					<div class="warningLogo"><img src="img/logo/warningNoBack.svg"></div>
+					<div class="warningText">We make everything to ensure the health, safety and well-being of our students<wbr/> and employees. Additional information can be found <a href="FAQPage.html" title="Go to FAQ">HERE</a></div>
+				</div>
+				<div class="prewCurses container Column">
+					<div class="PrewCursesTitle container Column">
+						<div class="Title" id="cursesTitle">our courses</div>
+						<div class="brick"></div>
+					</div>
+					<div class="PrewCursesInfo container"> 
+						<div>
+							<div class="mainText">F</div>
+							<div class="Title"><a href="courses/FineArtCourse.html">Fine Art</a></div>
+							<div class="prewCursesAbout">Fine art, also referred to as &quot;high art&quot;, has long been held up as the highest standard of artistic expression.</div>
+						</div>
+						<div>
+							<div class="mainText">G</div>
+							<div class="Title"><a href="courses/GraphCourse.html">Graphic Design</a></div>
+							<div class="prewCursesAbout">Graphic takes graphical and textual elements and implements them into multiple types of media.</div>
+						</div>
+						<div>
+							<div class="mainText">G</div>
+							<div class="Title"><a href="courses/GrafCourses.html">Graffiti</a></div>
+							<div class="prewCursesAbout">For some observers graffiti is a form of public art, continuing the tradition, for example, of the murals.</div>
+						</div>
+						<div>
+							<div class="mainText">I</div>
+							<div class="Title"><a href="courses/IllCourse.html">Illustration</a></div>
+							<div class="prewCursesAbout">Illustration is at once highly visible while being invisible, and it has an influence that transforms our visual culture.</div>
+						</div>
+					</div>
+					<div class="buttonSpecialWrapper">
+						<a href="CoursesPage.html" class="buttonSpecial">
+							<span class="buttonText container">
+								<span>See All</span>
+							</span> 
+						</a>
+					</div>
+				</div>
+				<div class="studentsWorks container Column">
+					<div class="studentsWorksTitle container Column">
+						<div class="Title">our student's works</div>
+						<div class="brick"></div>
+					</div>
+					<div id="studentsWorksLink" class="studentsWorksLink">
+						<img id="up" src="img/logo/up.svg">
+						<span id="phrase1"> Hide All</span>
+						<span id="phrase2"> Show All</span>
+					</div>
+					<div id="studentsWorksExampls" class="studentsWorksExampls">
+						<a id="back1" href="#popup1">
+							<picture>
+								<source srcset="img/studentWorks/1web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/1pn.png" alt="Summer burst" title="Summer burst">
+							</picture>
+						</a>
+						<a id="back2" href="#popup2">
+							<picture>
+								<source srcset="img/studentWorks/2web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/2pn.png" alt="Shape of shadows" title="Shape of shadows">
+							</picture>
+						</a>
+						<a id="back3" href="#popup3">
+							<picture>
+								<source srcset="img/studentWorks/3web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/3pn.png" alt="Ginkos' print" title="Ginkos' print">
+							</picture>
+						</a>
+						<a id="back4" href="#popup4">
+							<picture>
+								<source srcset="img/studentWorks/4web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/4pn.png" alt="Geometry of speed" title="Geometry of speed">
+							</picture>
+						</a>
+						<a id="back5" href="#popup5">
+							<picture>
+								<source srcset="img/studentWorks/5web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/5pn.png" alt="Yellow brick" title="Yellow brick">
+							</picture>
+						</a>
+						<a id="back6" href="#popup6">
+							<picture>
+								<source srcset="img/studentWorks/6web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/6pn.png" alt="The Neon God" title="The Neon God">
+							</picture>
+						</a>
+						<a id="back7" href="#popup7">
+							<picture>
+								<source srcset="img/studentWorks/7web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/7jp.jpg" alt="Waves of History" title="Waves of History">
+							</picture>
+						</a>
+						<a id="back8" href="#popup8">
+							<picture>
+								<source srcset="img/studentWorks/8web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/8pn.png" alt="Dust" title="Dust">
+							</picture>
+						</a>				
+						<a id="back9" href="#popup9">
+							<picture>
+								<source srcset="img/studentWorks/9web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/9pn.png" alt="New idea" title="New idea">
+							</picture>
+						</a>
+						<a id="back10" href="#popup10">
+							<picture>
+								<source srcset="img/studentWorks/10web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/10pn.png" alt="Net" title="Net">
+							</picture>
+						</a>
+						<a id="back11" href="#popup11">
+							<picture>
+								<source srcset="img/studentWorks/11web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/11pn.png" alt="Paper protest" title="Paper protest">
+							</picture>
+						</a>
+						<a  id="back12" href="#popup12">
+							<picture>
+								<source srcset="img/studentWorks/12web.webp" type="image/webp">
+								<img loading="lazy" src="img/studentWorks/12pn.png" alt="Lost" title="Lost">
+							</picture>	
+						</a>				
+					</div>
+
+				</div>
+				<div class="nextCurses container Column">
+					<div class="nextCursesTitle container Column">
+						<div class="Title">next courses</div>
+						<div class="brick"></div>
+					</div>
+					<div class="NextCursesAbout container"> 
+						<div>
+							<div class="mainText">14</div>
+							<div class="Title">June</div>
+							<div class="prewCursesAbout"> We wonder, what exactly does illustration mean? Join us this summer to get to the bottom of this question!</div>
+							<div class="NextCursesLink">
+								<a href="courses/IllCourse.html" class="active">Read More &gt;&gt;</a>
+							</div>
+						</div>
+						<div>
+							<div class="mainText">16</div>
+							<div class="Title">June</div>
+							<div class="prewCursesAbout">English for Digital Designers is an essential part and was born out of our passion for teaching and creating.</div>
+							<div class="NextCursesLink">
+								<a href="courses/EnglCourse.html" class="active">Read More &gt;&gt;</a>
+							</div>
+						</div>
+						<div>
+							<div class="mainText">09</div>
+							<div class="Title">July</div>
+							<div class="prewCursesAbout">Our Photoshop masterclass is now availbale onlain! Enhance your photo editing skills in this short meeting.</div>
+							<div class="NextCursesLink">
+								<a href="courses/PhotoshopCourse.html" class="active">Read More &gt;&gt;</a>
+							</div>
+						</div>
+						<div>
+							<div class="mainText">11</div>
+							<div class="Title">July</div>
+							<div class="prewCursesAbout">You'll understand fine art as a process of creating something unique which appeals to your visual sense.</div>
+							<div class="NextCursesLink">
+								<a href="courses/FineArtCourse.html" class="active">Read More &gt;&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="BlackCont">
+					<div class="LatestNewsTitle Column">
+						<div class="Title">latest news</div>
+						<div class="brick"></div>
+					</div>
+					<div class="slider"> 
+						<div class="sliderItem">
+							<a href="news/news10.html">
+								<picture>
+									<source srcset="img/news/option7web.webp" type="image/webp">
+									<img src="img/news/option7.jpg" alt="News about architecture">
+								</picture>
+								<div class="sliderItemNewsTetx">
+									<div class="sliderItemNewsTitle">beast, god<br> and line</div>
+									<div class="sliderItemNewsAbout">
+										One aspect of diversification of project<br> activities with the emergence<br> of two types of professionals<br> architects and designers.
+									</div>
+								</div>
+							</a> 
+						</div>
+						<div class="sliderItem">
+							<a href="news/news9.html">
+								<picture>
+									<source srcset="img/news/option16web.webp" type="image/webp">
+									<img src="img/news/option16.jpg" alt="Swamp mirror">
+								</picture>
+								<div class="sliderItemNewsTetx">
+									<div class="sliderItemNewsTitle">swamp<br> mirror</div>
+									<div class="sliderItemNewsAbout">
+										Bogs occupy vast territories and amaze <br>with their spectacular landscapes, sounds,<br> smells, fauna and flora.
+									</div>
+								</div>
+							</a> 
+						</div>
+						<div class="sliderItem">
+							<a href="news/news8.html">
+								<picture>
+									<source srcset="img/news/option10web.webp" type="image/webp">
+									<img src="img/news/option10.jpg" alt="Inspiration">
+								</picture>
+								<div class="sliderItemNewsTetx">
+									<div class="sliderItemNewsTitle">where did <br>the inspiration<br> go?<wbr/></div>
+									<div class="sliderItemNewsAbout">
+										Every creative person is subject<br> to the whims of a fickle muse that doesn’t<br> always show up when we need it to.
+									</div>
+								</div>
+							</a> 
+						</div>
+					</div>
+					<div class="LatestNewsLink">
+						<a href="NewsPage.html" class="active">Read All News &gt;&gt;</a>
+					</div>
+				</div>
+				<div class="paralaxNews container Column">
+					<div class="mainText">identity</div>
+					<div class="paralaxNewsText">conquer your own style with us</div>
+					<a class="button" href="AboutPage.html">Read More</a>
+				</div>
+			</div>
+			<div class="preFooterConteiner">
+				<div class="preFooter">
+					<div class="part Column">
+						<a href="#" class="logo">
+							<picture>
+									<source srcset="img/logo/logo.webp" type="image/webp">
+									<img src="img/logo/logoPNG.png" alt="Logo">
+							</picture>
+							art school.
+						</a>
+						<div class="notImportantText">
+							Our Art School is a leader in online studying. Founded by artist Noah Yoker, our site has been covering the art scene since 2005. Presenting a lively mix of courses,programs, news, reviews and interviews, Art School employs some of the best art teachers, journalists and critics on contemporary art.
+						</div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">site map</div>
+						<ul>
+							<li><a href="#">Home</a></li>
+							<li><a href="AboutPage.html">About</a></li>
+							<li><a href="CoursesPage.html">Courses</a></li>
+							<li><a href="FAQPage.html">FAQ</a></li>
+							<li><a href="NewsPage.html">News</a></li>
+							<li><a href="ContactsPage.html">Contact</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">courses</div>
+						<ul>
+							<li><a href="courses/FineArtCourse.html">Fine Art</a></li>
+							<li><a href="courses/GraphCourse.html">Graphic Design</a></li>
+							<li><a href="courses/GrafCourses.html">Graffiti</a></li>
+							<li><a href="courses/IllCourse.html">Illustration</a></li>
+						</ul>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">contact us</div>
+						<div class="phone"><img src="img/logo/cellphone.svg"><a href="tel:+74055550128">+7 (405) 555-0128</a></div>
+						<div class="mail"><img src="img/logo/mail.svg"><a href="mailto:hiArtSchool@.com">hiArtSchool@.com</a></div>
+					</div>
+					<div class="part Column">
+						<div class="preFooterTitle">privacy policy</div>
+						<div class="notImportantText">
+							This Privacy Policy is meant to help you understand what information we collect and why we collect it. Additional information can be found <a href="FAQPage.html" title="Go to FAQ">HERE</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<footer>
+				<div class="notImportantText">
+					&copy; 2022 by <span>art school</span>. All rights reserved.
+				</div>
+				<div><a href="#cursesTitle"><span>back to top</span></a></div>
+			</footer>
+			<div id="popup1" class="popup">
+				<a href="#back1" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/1web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/1pn.png" alt="Summer burst" title="Summer burst">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">summer burst</div>
+							<div class="popupText">
+								Darya Savoshic, 2009
+								<br>
+								<br>
+								Inspired by summer heat, our student Darya Savoshic has created a juicy wallpaper. After just 2 month of studying, she's disened over 150 projects and got 10 offers for work.
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back1" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup2" class="popup">
+				<a href="#back2" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/2web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/2pn.png" alt="Shape of shadows" title="Shape of shadows">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">shape of shadows</div>
+							<div class="popupText">
+								Sergey Goroshko, 2020
+								<br>
+								<br>
+								Sergey Goroshko said:&quot;I have lovingly worked into this piece, adding texture and colour, loght and shadows. I've used my pallet knives, brushes and scratching objects also. This artwork is special to me because it was my cours work in Art School&quot;.
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back2" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup3" class="popup">
+				<a href="#back3" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/3web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/3pn.png" alt="Ginkos' print" title="Ginkos' print">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">ginkos' print</div>
+							<div class="popupText">
+								Kirill Zayats, 2018
+								<br>
+								<br>
+								This print was created by Kirill Zayats for cloth. He'd mastered Fine Art course here and has started his own buisness.
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back3" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup4" class="popup">
+				<a href="#back4" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/4web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/4pn.png" alt="Geometry of speed" title="Geometry of speed">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">geometry of speed</div>
+							<div class="popupText">
+								Jassy J. Finller, 2009
+								<br>
+								<br>
+								Jassy J. Finller said, he'd wanted to creat a big bright colourful painting full of speed and immutability at the same time. You can fill vibrant energy of geometry.
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back4" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup5" class="popup">
+				<a href="#back5" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/5web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/5pn.png" alt="Yellow brick" title="Yellow brick">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">yellow brick</div>
+							<div class="popupText">
+								Lilac Kepsy, 2016
+								<br>
+								<br>
+								&quot;I want to show you, how simple shapes and colours could establish new unexplored form for customers attraction&quot;
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back5" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup6" class="popup">
+				<a href="#back6" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/6web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/6pn.png" alt="The Neon God" title="The Neon God">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">the Neon God</div>
+							<div class="popupText">
+								Mary Frank, 2021
+								<br>
+								<br>
+								&quot;The Neon God&quot; is my rethinking of the book written by N. Gaiman &quot;American Gods&quot;. Attractiveness and the ability to hold attention are the real pillars of our world.&quot;
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back6" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup7" class="popup">
+				<a href="#back7" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/7web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/7jp.jpg" alt="Waves of History" title="Waves of History">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">waves of History</div>
+							<div class="popupText">
+								Ann Smith, 2022
+								<br>
+								<br>
+								&quot;I thought a lot about the impact on the image of femininity and beauty. In my work, I've reviewed modern influencers and wanted to return to the tenderness of Antiquity.&quot;
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back7" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup8" class="popup">
+				<a href="#back8" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/8web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/8pn.png" alt="Dust" title="Dust">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">dust</div>
+							<div class="popupText">
+								Mao Chin Lu, 2015
+								<br>
+								<br>
+								Mao'd gratuated from our Graffity course, but hadn't stop. He's also mastered an incredible Art of Application, which allowed him to mix styles in the incredible flow in his mind. 
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back8" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup9" class="popup">
+				<a href="#back9" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/9web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/9pn.png" alt="New idea" title="New idea">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">new idea</div>
+							<div class="popupText">
+								Kate Brown, 2015
+								<br>
+								<br>
+								&quot;A course of Fine Art offers the widest possible of application of your abilities. This work was originally designed as an installation, but became very popular with students and teachers, so I had to put a graphic version in my portfolio.&quot;
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back9" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup10" class="popup">
+				<a href="#back10" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/10web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/10pn.png" alt="Net" title="Net">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">net</div>
+							<div class="popupText">
+								David Grine, 2015
+								<br>
+								<br>
+								&quot;I'v cope with Photoshop after attending masterclass in Art School. It was awesome! I've enhanced my photo editing skills in this short meeting.&quot;
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back10" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup11" class="popup">
+				<a href="#back11" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/11web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/11pn.png" alt="Paper protest" title="Paper protest">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">paper protest</div>
+							<div class="popupText">
+								Fatima Achmatova, 2020
+								<br>
+								<br>
+								&quot;This is a protest against futuristic techniques.We must return to materials that can be touched in order to better feeling the work and the world around us. I appreciate tactile sensations in art.&quot;
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back11" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+			<div id="popup12" class="popup">
+				<a href="#back12" class="popupArea"></a>
+				<div class="popupBody">
+					<div class="popupContent">
+						<picture>
+							<source srcset="img/studentWorks/12web.webp" type="image/webp">
+							<img loading="lazy" src="img/studentWorks/12pn.png" alt="Lost" title="Lost">
+						</picture>
+						<div class="popupInfo">
+							<div class="popupTitle Title">lost</div>
+							<div class="popupText">
+								Kate Mihasjova, 2022
+								<br>
+								<br>
+								&quot;I've always wanted to try somethihg new. According to my teacher, it's better to try something new than regarding after, that is why I followed my dream and got to the Illustration course.&quot;
+							</div>
+							<div class="ya-share2" data-curtain data-shape="round" data-lang="en" data-color-scheme="blackwhite" data-limit="3" data-services="facebook,telegram,twitter,linkedin"></div>
+						</div>
+						<a href="#back12" class="popupClose" title="Close">X</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script 
+		src="https://code.jquery.com/jquery-3.6.0.min.js" 
+		type="text/javascript" 
+		integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+		crossorigin="anonymous">	
+		</script>
+		<script src="js/scriptHeader.js" type="text/javascript"></script>
+		<script src="js/slick.min.js" type="text/javascript"></script>
+		<script src="js/scriptMainPage.js" type="text/javascript"></script>
+		<script src="https://yastatic.net/share2/share.js" async></script>
+	</body>
+</html>
